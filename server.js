@@ -9,6 +9,27 @@ app.use(express.json());
 
 // Initialize Groq Cloud API
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+// GET / - Default Entry Point
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: "Welcome to the QueueStorm Investigator API Hub!",
+    endpoints: {
+      health_check: {
+        method: "GET",
+        url: "/health",
+        description: "Verifies application readiness and uptime status."
+      },
+      ticket_analysis: {
+        method: "POST",
+        url: "/analyze-ticket",
+        description: "Accepts support ticket payloads and processes structured, safe, and context-aware operational assessments.",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  });
+});
 
 // GET /health - Enforced readiness endpoint
 app.get('/health', (req, res) => {
