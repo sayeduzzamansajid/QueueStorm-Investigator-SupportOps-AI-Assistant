@@ -2,6 +2,8 @@
 
 An automated, AI-powered digital finance support copilot and forensic investigator built for the **SUST CSE Carnival 2026 (Codex Community Hackathon)**. The system dynamically cross-references user complaints with transaction histories to produce structured, safe, and context-aware operational assessments.
 
+* **Live Production URL :** https://queuestorm-investigator-eosin.vercel.app/
+
 ---
 
 ## 🚀 Features & Endpoints
